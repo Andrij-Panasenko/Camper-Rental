@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { Field as FormikField, Form as FormikForm } from "formik";
+import {
+  Field as FormikField,
+  Form as FormikForm,
+  ErrorMessage as FormikError,
+} from "formik";
 
 export const FormTitle = styled.h2`
   font-weight: 600;
@@ -69,6 +73,11 @@ export const Textarea = styled(FormikField)`
   }
 `;
 
+export const ErrorMessage = styled(FormikError)`
+  color: ${(p) => p.theme.colors.red};
+  /* position: absolute; */
+`;
+
 export const SendButton = styled.button`
   border: none;
   border-radius: 200px;
@@ -85,7 +94,8 @@ export const SendButton = styled.button`
 
   transition: background-color ${(p) => p.theme.transition};
 
-  &:hover, :focus {
+  &:hover,
+  :focus {
     background-color: ${(p) => p.theme.colors.hoverRed};
   }
 `;
