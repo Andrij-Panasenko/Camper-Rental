@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Modal from "react-modal";
 import sprite from "../../assets/sprite.svg";
 import "./ModalShowMore.css";
@@ -28,7 +29,7 @@ import { useState } from "react";
 
 Modal.setAppElement("#modal");
 
-export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
+export const ModalShowMore = ({ isModalOpen, setIsOpen, setModalClose, data }) => {
   const [openFeature, setOpenFeature] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
 
@@ -51,15 +52,12 @@ export const ModalShowMore = ({ isModalOpen, setIsOpen, data }) => {
         className="Modal-content"
         isOpen={isModalOpen}
         onRequestClose={() => {
-          setIsOpen(false);
+          setModalClose();
           setOpenFeature(false);
           setOpenReviews(false);
         }}
         contentLabel="More info modal">
-        <CloseModal
-          onClick={() => {
-            setIsOpen(false);
-          }}>
+        <CloseModal onClick={setModalClose}>
           <CrossIcon>
             <use xlinkHref={sprite + "#icon-cross"}></use>
           </CrossIcon>

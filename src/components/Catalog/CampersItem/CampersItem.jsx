@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Item,
   Image,
@@ -30,6 +31,16 @@ export const CampersItem = ({ value }) => {
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isCardFavorite, setIsCardFavorite] = useState(false);
+
+  const handleModalOpen = () => {
+    setIsOpenModal(true);
+    document.body.style.overflow = "hidden";
+  }
+
+  const handleModalClose = () => {
+    setIsOpenModal(false);
+    document.body.style.overflow = "auto";
+  };
 
   const {
     adults,
@@ -126,7 +137,7 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <Price>
-              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon }
+              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon}
             </Price>
           </TitleWrapper>
           <CardInfo>
@@ -175,7 +186,8 @@ export const CampersItem = ({ value }) => {
 
       <ModalShowMore
         isModalOpen={isOpenModal}
-        setIsOpen={setIsOpenModal}
+        setIsOpen={handleModalOpen}
+        setModalClose={handleModalClose}
         data={value}
       />
     </>

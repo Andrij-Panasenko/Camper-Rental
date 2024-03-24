@@ -16,7 +16,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 720px;
-    max-height: calc(100vh - 40px);
+    max-height: 520px;
     width: 982px;
     border-radius: 20px;
     background-color: #ffffff;
@@ -31,7 +31,6 @@
 .Modal-content::-webkit-scrollbar-track {
     background-color: transparent;
     border: none;
-    
 }
 
 .Modal-content::-webkit-scrollbar-thumb {
