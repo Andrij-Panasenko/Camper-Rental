@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
-import { selectCampers } from "../../../redux/selectors";
+import { selectCampers, selectIsLoading } from "../../../redux/selectors";
 import { CampersItem } from "../CampersItem/CampersItem";
 import { useState } from "react";
 import { LoadMore } from "./CatalogList.styled";
+import Notiflix from "notiflix";
 
 export const CatalogList = () => {
   const campersItem = useSelector(selectCampers);
+  const isLoading = useSelector(selectIsLoading);
 
   const [visibleCampers, setVisibleCampers] = useState(4);
 
@@ -15,6 +17,8 @@ export const CatalogList = () => {
 
   return (
     <>
+      {isLoading && Notiflix.Loading.dots('Please wait')}
+      {!isLoading && Notiflix.Loading.remove()}
       <div>
         <ul>
           {campersItem.slice(0, visibleCampers).map((item) => (
