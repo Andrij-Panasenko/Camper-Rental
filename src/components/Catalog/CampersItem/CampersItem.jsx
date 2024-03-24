@@ -174,11 +174,7 @@ export const CampersItem = ({ value }) => {
             </InfoListItem>
             <InfoListItem>{acSvgIcon}AC</InfoListItem>
           </InfoList>
-          <Button
-            type="button"
-            onClick={() => {
-              setIsOpenModal(true);
-            }}>
+          <Button type="button" onClick={handleModalOpen}>
             Show more
           </Button>
         </div>
@@ -186,7 +182,6 @@ export const CampersItem = ({ value }) => {
 
       <ModalShowMore
         isModalOpen={isOpenModal}
-        setIsOpen={handleModalOpen}
         setModalClose={handleModalClose}
         data={value}
       />

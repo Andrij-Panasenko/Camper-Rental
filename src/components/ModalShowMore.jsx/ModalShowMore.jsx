@@ -29,7 +29,7 @@ import { useState } from "react";
 
 Modal.setAppElement("#modal");
 
-export const ModalShowMore = ({ isModalOpen, setIsOpen, setModalClose, data }) => {
+export const ModalShowMore = ({ isModalOpen, setModalClose, data }) => {
   const [openFeature, setOpenFeature] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
 
