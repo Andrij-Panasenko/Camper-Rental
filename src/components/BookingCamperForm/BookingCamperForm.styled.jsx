@@ -75,7 +75,7 @@ export const Textarea = styled(FormikField)`
 
 export const ErrorMessage = styled(FormikError)`
   color: ${(p) => p.theme.colors.red};
-  /* position: absolute; */
+  font-size: 15px;
 `;
 
 export const SendButton = styled.button`

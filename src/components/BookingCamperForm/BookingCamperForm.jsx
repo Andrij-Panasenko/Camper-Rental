@@ -14,7 +14,7 @@ import * as Yup from "yup";
 const bookingCamperFormSchema = Yup.object().shape({
   name: Yup.string().min(2, "Name is too short").required("Name id needed"),
   email: Yup.string().email().required("Please, enter your email"),
-  date: Yup.string().date().required("Please, put in desired date"),
+  date: Yup.string().required("Please, put in desired date"),
   message: Yup.string(),
 });
 
