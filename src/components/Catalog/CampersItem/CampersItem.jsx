@@ -17,6 +17,7 @@ import {
   RatingWrapper,
   LocationWrapper,
   MapPinSVG,
+  SvgHeart,
 } from "./CampersItem.styled";
 import sprite from "../../../assets/sprite.svg";
 
@@ -110,13 +111,13 @@ export const CampersItem = ({ value }) => {
    );
 
   const heartSvgIcon = (
-    <Svg
+    <SvgHeart
       onClick={() => {
         dispatch(addToFavorite(value));
         setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-heart"}></use>
-    </Svg>
+    </SvgHeart>
   );
 
   const redHeartSvg = (

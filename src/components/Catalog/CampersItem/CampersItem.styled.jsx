@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const Svg = styled.svg`
+  width: 20px;
+  height: 20px;
+`;
+
+export const SvgHeart = styled.svg`
   cursor: pointer;
   width: 20px;
   height: 20px;
