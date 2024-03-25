@@ -33,6 +33,7 @@ export const BookingCamperForm = () => {
           onSubmit={(values, actions) => {
             console.log(values);
             actions.resetForm();
+            window.location.reload();
           }}>
           <Form>
             <FormTitle>Book your campervan now</FormTitle>
