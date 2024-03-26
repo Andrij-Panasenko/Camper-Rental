@@ -73,6 +73,7 @@ export const Price = styled.p`
 export const PriceWrapp = styled.div`
   display: flex;
   gap: 10px;
+  align-items: center;
 `;
 
 export const TitleWrapper = styled.div`
