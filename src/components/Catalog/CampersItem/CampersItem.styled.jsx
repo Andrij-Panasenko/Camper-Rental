@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const Svg = styled.svg`
-  width: 20px;
-  height: 20px;
-`;
-
 export const HeartWrapper = styled.div`
   cursor: pointer;
   width: 24px;
@@ -68,12 +63,16 @@ export const Title = styled.h2`
 `;
 
 export const Price = styled.p`
-  display: flex;
-  gap: 10px;
+  
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;
   color: ${(p) => p.theme.colors.black};
+`;
+
+export const PriceWrapp = styled.div`
+  display: flex;
+  gap: 10px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -134,9 +133,6 @@ export const InfoList = styled.ul`
 
 export const InfoListItem = styled.li`
   padding: 12px 18px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
   border-radius: 100px;
   display: flex;
   justify-content: center;
@@ -144,6 +140,14 @@ export const InfoListItem = styled.li`
 
   color: ${(p) => p.theme.colors.black};
   background-color: ${(p) => p.theme.colors.blockFeatures};
+`;
+
+
+
+export const InfoListText = styled.p`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
 `;
 
 export const Button = styled.button`

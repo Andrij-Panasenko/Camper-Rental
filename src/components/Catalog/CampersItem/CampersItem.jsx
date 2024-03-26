@@ -10,13 +10,14 @@ import {
   TitleWrapper,
   InfoList,
   InfoListItem,
-  Svg,
   RateSvg,
   CardInfo,
   RatingWrapper,
   LocationWrapper,
   MapPinSVG,
   HeartWrapper,
+  InfoListText,
+  PriceWrapp,
 } from "./CampersItem.styled";
 import sprite from "../../../assets/sprite.svg";
 
@@ -69,33 +70,33 @@ export const CampersItem = ({ value }) => {
   );
 
   const adultsSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-adults"}></use>
-    </Svg>
+    </svg>
   );
 
   const kitchenSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-kitchen"}></use>
-    </Svg>
+    </svg>
   );
 
   const transmissionSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-trans"}></use>
-    </Svg>
+    </svg>
   );
 
   const petrolSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-petrol"}></use>
-    </Svg>
+    </svg>
   );
 
   const bedsSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-bed"}></use>
-    </Svg>
+    </svg>
   );
 
   const acSvgIcon = (
@@ -139,12 +140,14 @@ export const CampersItem = ({ value }) => {
         <div>
           <TitleWrapper>
             <Title>{name}</Title>
-            <Price>
-              €{price}.00{" "}
-              <HeartWrapper>
-                {isCardFavorite ? redHeartSvg : heartSvgIcon}
-              </HeartWrapper>
-            </Price>
+            <PriceWrapp>
+              <Price>
+                €{price}.00{" "}
+              </Price>
+                <HeartWrapper>
+                  {isCardFavorite ? redHeartSvg : heartSvgIcon}
+                </HeartWrapper>
+            </PriceWrapp>
           </TitleWrapper>
           <CardInfo>
             <RatingWrapper>
@@ -162,30 +165,30 @@ export const CampersItem = ({ value }) => {
           <Description>{description}</Description>
           <InfoList>
             <InfoListItem>
-              <div>{adultsSvgIcon}</div>
-              <p>{adults}&nbsp;adults</p>
+              {adultsSvgIcon}
+              <InfoListText>{adults}&nbsp;adults</InfoListText>
             </InfoListItem>
             <InfoListItem>
-              <div>{transmissionSvgIcon}</div>
+              {transmissionSvgIcon}
 
-              <p>{transmission}</p>
+              <InfoListText>{transmission}</InfoListText>
             </InfoListItem>
             <InfoListItem>
-              <div>{petrolSvgIcon}</div>
-              <p>{engine}</p>
+              {petrolSvgIcon}
+              <InfoListText>{engine}</InfoListText>
             </InfoListItem>
 
             <InfoListItem>
-              <div>{kitchenSvgIcon}</div>
-              <p>Kitchen</p>
+              {kitchenSvgIcon}
+              <InfoListText>Kitchen</InfoListText>
             </InfoListItem>
             <InfoListItem>
-              <div>{bedsSvgIcon}</div>
-              <p>{details.beds}&nbsp;beds</p>
+              {bedsSvgIcon}
+              <InfoListText>{details.beds}&nbsp;beds</InfoListText>
             </InfoListItem>
             <InfoListItem>
-              <div>{acSvgIcon}</div>
-              <p>AC</p>
+              {acSvgIcon}
+              <InfoListText>AC</InfoListText>
             </InfoListItem>
           </InfoList>
           <Button type="button" onClick={handleModalOpen}>
