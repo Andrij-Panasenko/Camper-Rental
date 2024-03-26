@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectFavoriteCampers } from "../../../redux/selectors";
-import { FavoritesItem } from "../FavoritesItem/FavoritesItem";
 import { EmtyListMsg } from "./FavoriteList.styled";
+import { CampersItem } from "../../Catalog/CampersItem/CampersItem";
 
 export const FavoriteList = () => {
   const favorites = useSelector(selectFavoriteCampers);
@@ -14,8 +14,8 @@ export const FavoriteList = () => {
         </EmtyListMsg>
       ) : (
         <ul>
-          {favorites.map((item) => (
-            <FavoritesItem key={item._id} data={item} />
+            {favorites.map((item) => (
+            <CampersItem key={item._id} value={item} />
           ))}
         </ul>
       )}
