@@ -162,23 +162,31 @@ export const CampersItem = ({ value }) => {
           <Description>{description}</Description>
           <InfoList>
             <InfoListItem>
-              {adultsSvgIcon}
-              {adults}&nbsp;adults
+              <div>{adultsSvgIcon}</div>
+              <p>{adults}&nbsp;adults</p>
             </InfoListItem>
             <InfoListItem>
-              {transmissionSvgIcon}
-              {transmission}
+              <div>{transmissionSvgIcon}</div>
+
+              <p>{transmission}</p>
             </InfoListItem>
             <InfoListItem>
-              {petrolSvgIcon}
-              {engine}
+              <div>{petrolSvgIcon}</div>
+              <p>{engine}</p>
             </InfoListItem>
-            <InfoListItem>{kitchenSvgIcon}Kitchen</InfoListItem>
+
             <InfoListItem>
-              {bedsSvgIcon}
-              {details.beds}&nbsp;beds
+              <div>{kitchenSvgIcon}</div>
+              <p>Kitchen</p>
             </InfoListItem>
-            <InfoListItem>{acSvgIcon}AC</InfoListItem>
+            <InfoListItem>
+              <div>{bedsSvgIcon}</div>
+              <p>{details.beds}&nbsp;beds</p>
+            </InfoListItem>
+            <InfoListItem>
+              <div>{acSvgIcon}</div>
+              <p>AC</p>
+            </InfoListItem>
           </InfoList>
           <Button type="button" onClick={handleModalOpen}>
             Show more
