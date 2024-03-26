@@ -5,10 +5,20 @@ export const Svg = styled.svg`
   height: 20px;
 `;
 
-export const SvgHeart = styled.svg`
+export const HeartWrapper = styled.div`
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  stroke: ${(p) => p.theme.colors.black};
+  fill: #ffffff;
+
+  transition: stroke, fill ${p=>p.theme.transition};
+
+  &:hover,
+  :focus {
+    stroke: red;
+    fill: red;
+  }
 `;
 
 export const RateSvg = styled.svg`
@@ -58,6 +68,8 @@ export const Title = styled.h2`
 `;
 
 export const Price = styled.p`
+  display: flex;
+  gap: 10px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25;

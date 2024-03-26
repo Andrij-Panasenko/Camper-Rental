@@ -17,7 +17,7 @@ import {
   RatingWrapper,
   LocationWrapper,
   MapPinSVG,
-  SvgHeart,
+  HeartWrapper,
 } from "./CampersItem.styled";
 import sprite from "../../../assets/sprite.svg";
 
@@ -36,7 +36,7 @@ export const CampersItem = ({ value }) => {
   const handleModalOpen = () => {
     setIsOpenModal(true);
     document.body.style.overflow = "hidden";
-  }
+  };
 
   const handleModalClose = () => {
     setIsOpenModal(false);
@@ -56,7 +56,6 @@ export const CampersItem = ({ value }) => {
     gallery,
     reviews,
   } = value;
-
 
   const ratingSVG = (
     <RateSvg>
@@ -100,24 +99,26 @@ export const CampersItem = ({ value }) => {
     </Svg>
   );
 
-   const acSvgIcon = (
-     <PiWind
-       style={{
-         color: "#000000",
-         width: "20px",
-         height: "20px",
-       }}
-     />
-   );
+  const acSvgIcon = (
+    <PiWind
+      style={{
+        color: "#000000",
+        width: "20px",
+        height: "20px",
+      }}
+    />
+  );
 
   const heartSvgIcon = (
-    <SvgHeart
+    <svg
+      width="24"
+      height="24"
       onClick={() => {
         dispatch(addToFavorite(value));
         setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-heart"}></use>
-    </SvgHeart>
+    </svg>
   );
 
   const redHeartSvg = (
@@ -138,7 +139,10 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <Price>
-              €{price}.00 {isCardFavorite ? redHeartSvg : heartSvgIcon}
+              €{price}.00{" "}
+              <HeartWrapper>
+                {isCardFavorite ? redHeartSvg : heartSvgIcon}
+              </HeartWrapper>
             </Price>
           </TitleWrapper>
           <CardInfo>
