@@ -12,12 +12,12 @@ export const HeartWrapper = styled.div`
   stroke: ${(p) => p.theme.colors.black};
   fill: #ffffff;
 
-  transition: stroke, fill ${p=>p.theme.transition};
+  transition: stroke, fill ${(p) => p.theme.transition};
 
   &:hover,
   :focus {
-    stroke: red;
-    fill: red;
+    stroke: ${(p) => p.theme.colors.red};
+    fill: ${(p) => p.theme.colors.red};
   }
 `;
 

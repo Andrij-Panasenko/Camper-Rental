@@ -122,13 +122,15 @@ export const CampersItem = ({ value }) => {
   );
 
   const redHeartSvg = (
-    <Svg
+    <svg
+      width="24"
+      height="24"
       onClick={() => {
         dispatch(removeFromFavorite(value));
         setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-red-heart"}></use>
-    </Svg>
+    </svg>
   );
 
   return (
