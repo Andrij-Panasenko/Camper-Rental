@@ -31,7 +31,7 @@ export const FavoritesItem = ({ data }) => {
   const dispatch = useDispatch();
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isCardFavorite, setIsCardFavorite] = useState(false);
+  
   const {
     adults,
     description,
@@ -104,11 +104,12 @@ export const FavoritesItem = ({ data }) => {
       height="24"
       onClick={() => {
         dispatch(removeFromFavorite(data));
-        setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-red-heart"}></use>
     </Svg>
   );
+
+  const priceValue = price.toFixed(2).replace(".", ",");
 
   return (
     <>
@@ -118,7 +119,7 @@ export const FavoritesItem = ({ data }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <PriceWrapp>
-              <Price>€{price}.00</Price>
+              <Price>€{priceValue}</Price>
               <RedHeartWrapp>{redHeartSvg}</RedHeartWrapp>
             </PriceWrapp>
           </TitleWrapper>

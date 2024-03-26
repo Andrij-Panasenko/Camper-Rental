@@ -21,17 +21,23 @@ import {
 } from "./CampersItem.styled";
 import sprite from "../../../assets/sprite.svg";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToFavorite, removeFromFavorite } from "../../../redux/catalogSlice";
 import { PiWind } from "react-icons/pi";
+import { selectFavoriteCampers } from "../../../redux/selectors";
 
 export const CampersItem = ({ value }) => {
   const dispatch = useDispatch();
 
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isCardFavorite, setIsCardFavorite] = useState(false);
+  const favorites = useSelector(selectFavoriteCampers);
+
+  const isCardFavorite = useMemo(
+    () => favorites.find((favorite) => favorite._id === value._id),
+    [favorites, value._id]
+  );
 
   const handleModalOpen = () => {
     setIsOpenModal(true);
@@ -115,7 +121,6 @@ export const CampersItem = ({ value }) => {
       height="24"
       onClick={() => {
         dispatch(addToFavorite(value));
-        setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-heart"}></use>
     </svg>
@@ -127,11 +132,12 @@ export const CampersItem = ({ value }) => {
       height="24"
       onClick={() => {
         dispatch(removeFromFavorite(value));
-        setIsCardFavorite(!isCardFavorite);
       }}>
       <use xlinkHref={sprite + "#icon-red-heart"}></use>
     </svg>
   );
+
+  const priceValue = price.toFixed(2).replace(".",",");
 
   return (
     <>
@@ -141,7 +147,7 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <PriceWrapp>
-              <Price>€{price}.00 </Price>
+              <Price>€{priceValue} </Price>
               <HeartWrapper>
                 {isCardFavorite ? redHeartSvg : heartSvgIcon}
               </HeartWrapper>
