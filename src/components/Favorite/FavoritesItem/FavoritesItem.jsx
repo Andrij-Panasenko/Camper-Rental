@@ -6,13 +6,16 @@ import {
   Image,
   InfoList,
   InfoListItem,
+  InfoListText,
   Item,
   Location,
   LocationWrapper,
   MapPinSVG,
   Price,
+  PriceWrapp,
   RateSvg,
   RatingWrapper,
+  RedHeartWrapp,
   Reviews,
   Svg,
   Title,
@@ -56,33 +59,33 @@ export const FavoritesItem = ({ data }) => {
   );
 
   const adultsSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-adults"}></use>
-    </Svg>
+    </svg>
   );
 
   const kitchenSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-kitchen"}></use>
-    </Svg>
+    </svg>
   );
 
   const transmissionSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-trans"}></use>
-    </Svg>
+    </svg>
   );
 
   const petrolSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-petrol"}></use>
-    </Svg>
+    </svg>
   );
 
   const bedsSvgIcon = (
-    <Svg>
+    <svg width="20" height="20">
       <use xlinkHref={sprite + "#icon-bed"}></use>
-    </Svg>
+    </svg>
   );
 
   const acSvgIcon = (
@@ -97,6 +100,8 @@ export const FavoritesItem = ({ data }) => {
 
   const redHeartSvg = (
     <Svg
+      width="24"
+      height="24"
       onClick={() => {
         dispatch(removeFromFavorite(data));
         setIsCardFavorite(!isCardFavorite);
@@ -112,9 +117,10 @@ export const FavoritesItem = ({ data }) => {
         <div>
           <TitleWrapper>
             <Title>{name}</Title>
-            <Price>
-              €{price}.00 {redHeartSvg}
-            </Price>
+            <PriceWrapp>
+              <Price>€{price}.00</Price>
+              <RedHeartWrapp>{redHeartSvg}</RedHeartWrapp>
+            </PriceWrapp>
           </TitleWrapper>
           <CardInfo>
             <RatingWrapper>
@@ -133,20 +139,20 @@ export const FavoritesItem = ({ data }) => {
           <InfoList>
             <InfoListItem>
               {adultsSvgIcon}
-              {adults}&nbsp;adults
+              <InfoListText>{adults}&nbsp;adults</InfoListText>
             </InfoListItem>
             <InfoListItem>
               {transmissionSvgIcon}
-              {transmission}
+              <InfoListText>{transmission}</InfoListText>
             </InfoListItem>
             <InfoListItem>
               {petrolSvgIcon}
-              {engine}
+              <InfoListText>{engine}</InfoListText>
             </InfoListItem>
             <InfoListItem>{kitchenSvgIcon}Kitchen</InfoListItem>
             <InfoListItem>
               {bedsSvgIcon}
-              {details.beds}&nbsp;beds
+              <InfoListText>{details.beds}&nbsp;beds</InfoListText>
             </InfoListItem>
             <InfoListItem>{acSvgIcon}AC</InfoListItem>
           </InfoList>

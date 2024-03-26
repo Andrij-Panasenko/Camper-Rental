@@ -141,12 +141,10 @@ export const CampersItem = ({ value }) => {
           <TitleWrapper>
             <Title>{name}</Title>
             <PriceWrapp>
-              <Price>
-                €{price}.00{" "}
-              </Price>
-                <HeartWrapper>
-                  {isCardFavorite ? redHeartSvg : heartSvgIcon}
-                </HeartWrapper>
+              <Price>€{price}.00 </Price>
+              <HeartWrapper>
+                {isCardFavorite ? redHeartSvg : heartSvgIcon}
+              </HeartWrapper>
             </PriceWrapp>
           </TitleWrapper>
           <CardInfo>
