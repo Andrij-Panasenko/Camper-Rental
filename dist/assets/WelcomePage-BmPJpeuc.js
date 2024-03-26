@@ -1,4 +1,4 @@
-import{u as n,N as r,j as e}from"./index-BU7zJJFQ.js";const t="/camper-rental/assets/Banner-Images-DVxRIAoc.jpg",a=n.div`
+import{u as n,N as r,j as e}from"./index-CYjzjvXM.js";const t="/camper-rental/assets/Banner-Images-DVxRIAoc.jpg",a=n.div`
   display: flex;
   flex-direction: column;
   align-items: center;
