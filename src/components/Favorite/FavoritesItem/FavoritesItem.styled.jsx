@@ -65,6 +65,7 @@ export const PriceWrapp = styled.div`
 export const RedHeartWrapp = styled.div`
   width: 24px;
   height: 24px;
+  cursor: pointer;
 `;
 
 export const TitleWrapper = styled.div`
