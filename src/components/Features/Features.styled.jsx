@@ -14,6 +14,12 @@ export const FeaturesItem = styled.li`
   border-radius: 100px;
   padding: 12px 18px;
   background-color: ${(p) => p.theme.colors.blockFeatures};
+
+  & > p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const VehicleDetailsTitle = styled.h2`
