@@ -11,7 +11,7 @@ import {
 import sprite from "../../assets/sprite.svg";
 
 export const Features = ({ data }) => {
-  const { form, length, width, height, consumption, tank, details } = data;
+  const { details } = data;
 
   const filteredDetails = Object.entries(details).filter(
     ([key, value]) => value !== 0 || value !== ""

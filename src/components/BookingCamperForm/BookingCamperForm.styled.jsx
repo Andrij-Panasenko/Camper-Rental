@@ -25,7 +25,7 @@ export const Form = styled(FormikForm)`
   flex-direction: column;
   padding: 24px;
   width: 448px;
-  height: 532px;
+  height: calc(100% - 50px);
 
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
