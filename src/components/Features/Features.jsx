@@ -16,6 +16,8 @@ export const Features = ({ data }) => {
   const filteredDetails = Object.entries(details).filter(
     ([key, value]) => value !== 0 || value !== ""
   );
+
+  console.log(Object.entries(details))
   return (
     <>
       <div>
@@ -32,30 +34,15 @@ export const Features = ({ data }) => {
           <use xlinkHref={sprite + "#icon-Vector"}></use>
         </SvgLine>
         <VehicleDetailsList>
-          <VehicleDetailsItem>
-            <VehicleDetailsContent>Form</VehicleDetailsContent>
-            <VehicleDetailsContent>{form}</VehicleDetailsContent>
-          </VehicleDetailsItem>
-          <VehicleDetailsItem>
-            <VehicleDetailsContent>Length</VehicleDetailsContent>
-            <VehicleDetailsContent>{length}</VehicleDetailsContent>
-          </VehicleDetailsItem>
-          <VehicleDetailsItem>
-            <VehicleDetailsContent>Width</VehicleDetailsContent>
-            <VehicleDetailsContent>{width}</VehicleDetailsContent>
-          </VehicleDetailsItem>
-          <VehicleDetailsItem>
-            <VehicleDetailsContent>Height</VehicleDetailsContent>
-            <VehicleDetailsContent>{height}</VehicleDetailsContent>
-          </VehicleDetailsItem>
-          <VehicleDetailsItem>
-            <VehicleDetailsContent>Tank</VehicleDetailsContent>
-            <VehicleDetailsContent>{tank}</VehicleDetailsContent>
-          </VehicleDetailsItem>
-          <VehicleDetailsItem>
-            <VehicleDetailsContent>Consumption</VehicleDetailsContent>
-            <VehicleDetailsContent>{consumption}</VehicleDetailsContent>
-          </VehicleDetailsItem>
+          {Object.entries(details).map(
+            ([key, value]) =>
+              (value !== "" && (
+                <VehicleDetailsItem key={key}>
+                  <VehicleDetailsContent>{key}</VehicleDetailsContent>
+                  <VehicleDetailsContent>{value}</VehicleDetailsContent>
+                </VehicleDetailsItem>
+              ))
+          )}
         </VehicleDetailsList>
       </div>
     </>
