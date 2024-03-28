@@ -2,9 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Inter", sans-serif;
-    margin: 0;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  overflow: scroll;
 }
 
 button {
