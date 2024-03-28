@@ -22,7 +22,7 @@ import {
 import sprite from "../../../assets/sprite.svg";
 
 import { useMemo, useState } from "react";
-import { ModalShowMore } from "../../ModalShowMore.jsx/ModalShowMore";
+import { ModalShowMore } from "../../ModalShowMore/ModalShowMore";
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavorite, removeFromFavorite } from "../../../redux/catalogSlice";
 import { PiWind } from "react-icons/pi";
