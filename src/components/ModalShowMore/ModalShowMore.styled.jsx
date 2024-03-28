@@ -159,5 +159,4 @@ export const IconLine = styled.span`
 export const ExpandedContetnWrapp = styled.div`
   display: flex;
   gap: 24px;
-  /* justify-content: space-between; */
 `;
