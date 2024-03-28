@@ -137,7 +137,7 @@ export const CampersItem = ({ value }) => {
     </svg>
   );
 
-  const priceValue = price.toFixed(2).replace(".",",");
+  const priceValue = price.toFixed(2).replace(".", ",");
 
   return (
     <>
