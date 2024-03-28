@@ -14,9 +14,9 @@ import sprite from "../../assets/sprite.svg";
 export const Features = ({ data }) => {
   const { details } = data;
 
-  // const filteredDetails = Object.entries(details).filter(
-  //   ([key, value]) => value !== 0 || value !== ""
-  // );
+  const filteredDetails = Object.entries(details).filter(
+    ([key, value]) => value !== 0 || value !== ""
+  );
 
   const iconSet = {
     CD: (
@@ -36,7 +36,7 @@ export const Features = ({ data }) => {
     ),
     beds: (
       <svg width="20" height="20">
-        <use xlinkHref={sprite + "#icon-beds"}></use>
+        <use xlinkHref={sprite + "#icon-bed"}></use>
       </svg>
     ),
     freezer: (
@@ -47,6 +47,11 @@ export const Features = ({ data }) => {
     gas: (
       <svg width="20" height="20">
         <use xlinkHref={sprite + "#icon-gas"}></use>
+      </svg>
+    ),
+    toilet: (
+      <svg width="20" height="20">
+        <use xlinkHref={sprite + "#icon-toilet"}></use>
       </svg>
     ),
     hob: (
@@ -62,6 +67,21 @@ export const Features = ({ data }) => {
     radio: (
       <svg width="20" height="20">
         <use xlinkHref={sprite + "#icon-radio"}></use>
+      </svg>
+    ),
+    shower: (
+      <svg width="20" height="20">
+        <use xlinkHref={sprite + "#icon-shower"}></use>
+      </svg>
+    ),
+    microwave: (
+      <svg width="20" height="20">
+        <use xlinkHref={sprite + "#icon-microwave"}></use>
+      </svg>
+    ),
+    water: (
+      <svg width="20" height="20">
+        <use xlinkHref={sprite + "#icon-water"}></use>
       </svg>
     ),
     AC: (
@@ -87,46 +107,13 @@ export const Features = ({ data }) => {
     <>
       <div>
         <FeaturesList>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
-          <FeaturesItem>
-            <div></div>
-            <p></p>
-          </FeaturesItem>
+          {filteredDetails.map(([key, value], idx) => (
+            <FeaturesItem key={idx}>
+              {iconSet[key]}
+              <p>{key}&nbsp;</p>
+              {value > 1 && <p>{value}</p>}
+            </FeaturesItem>
+          ))}
         </FeaturesList>
         <VehicleDetailsTitle>Vehicle details</VehicleDetailsTitle>
         <SvgLine>
