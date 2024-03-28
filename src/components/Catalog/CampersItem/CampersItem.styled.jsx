@@ -85,7 +85,7 @@ export const TitleWrapper = styled.div`
 export const Reviews = styled.p`
   font-size: 16px;
   line-height: 1.5;
-  text-decoration: underline;
+  border-bottom: 2px solid ${(p) => p.theme.colors.black};
   color: ${(p) => p.theme.colors.black};
 `;
 
