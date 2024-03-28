@@ -14,7 +14,7 @@ import {
   VehicleList,
   VehicleType,
   VehicleName,
-  VehicleTypeSvg,
+  // VehicleTypeSvg,
   SubmitBtn,
   FilterIcon,
 } from "./CampersFilter.styled";
@@ -69,21 +69,21 @@ export const CampersFilter = () => {
   );
 
   const vanSVG = (
-    <VehicleTypeSvg>
+    <svg width="40" height="28">
       <use xlinkHref={sprite + "#icon-van"}></use>
-    </VehicleTypeSvg>
+    </svg>
   );
 
   const integratedSVG = (
-    <VehicleTypeSvg>
+    <svg width="40" height="28">
       <use xlinkHref={sprite + "#icon-integrated"}></use>
-    </VehicleTypeSvg>
+    </svg>
   );
 
   const acloveSVG = (
-    <VehicleTypeSvg>
+    <svg width="40" height="28">
       <use xlinkHref={sprite + "#icon-aclove"}></use>
-    </VehicleTypeSvg>
+    </svg>
   );
 
   return (

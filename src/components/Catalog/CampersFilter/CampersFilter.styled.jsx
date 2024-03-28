@@ -129,10 +129,10 @@ export const VehicleName = styled.p`
   color: ${(p) => p.theme.colors.black};
 `;
 
-export const VehicleTypeSvg = styled.svg`
-  width: 40px;
-  height: 28px;
-`;
+// export const VehicleTypeSvg = styled.svg`
+//   width: 40px;
+//   height: 28px;
+// `;
 
 export const SubmitBtn = styled.button`
   display: block;
