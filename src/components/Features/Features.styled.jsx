@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FeaturesList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  width: 430px;
+  max-width: 430px;
   row-gap: 8px;
   column-gap: 8px;
   margin-bottom: 44px;
@@ -20,6 +20,12 @@ export const FeaturesItem = styled.li`
     font-size: 16px;
     line-height: 1.25;
   }
+`;
+
+export const IcoWrapp = styled.div`
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 `;
 
 export const VehicleDetailsTitle = styled.h2`

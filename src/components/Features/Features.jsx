@@ -6,6 +6,7 @@ import {
   SvgLine,
   FeaturesItem,
   FeaturesList,
+  IcoWrapp,
 } from "./Features.styled";
 import { PiWind } from "react-icons/pi";
 
@@ -74,6 +75,11 @@ export const Features = ({ data }) => {
         <use xlinkHref={sprite + "#icon-shower"}></use>
       </svg>
     ),
+    bathroom: ((
+      <svg width="20" height="20">
+        <use xlinkHref={sprite + "#icon-shower"}></use>
+      </svg>
+    )),
     microwave: (
       <svg width="20" height="20">
         <use xlinkHref={sprite + "#icon-microwave"}></use>
@@ -95,23 +101,15 @@ export const Features = ({ data }) => {
     ),
   };
 
-  // <FeaturesList>
-  //         {filteredDetails.map((item) => (
-  //           <FeaturesItem key={item[0]}>
-  //             <p> {item[0]} &nbsp;</p>
-  //             <p>{item[1]}</p>
-  //           </FeaturesItem>
-  //         ))}
-  //       </FeaturesList>
   return (
     <>
       <div>
         <FeaturesList>
           {filteredDetails.map(([key, value], idx) => (
             <FeaturesItem key={idx}>
-              {iconSet[key]}
-              <p>{key}&nbsp;</p>
-              {value > 1 && <p>{value}</p>}
+              <IcoWrapp>{iconSet[key]}</IcoWrapp>
+              {value > 1 && <p>{value} &nbsp; </p>}
+              <p>{key}</p>
             </FeaturesItem>
           ))}
         </FeaturesList>
