@@ -20,7 +20,10 @@ import {
   Reviews,
   ReviewsBtn,
   Title,
+  Wrapp,
 } from "./ModalShowMore.styled";
+import { BsFillStarFill as YellowStar } from "react-icons/bs";
+
 import { BookingCamperForm } from "../BookingCamperForm/BookingCamperForm";
 import { Features } from "../Features/Features";
 import { Reviews as ReviewsBlock } from "../Reviews/Reviews";
@@ -44,6 +47,7 @@ export const ModalShowMore = ({ isModalOpen, setModalClose, data }) => {
 
   const { name, price, rating, reviews, description, gallery, location } = data;
 
+  const priceValue = price.toFixed(2).replace(".", ",");
   return (
     <>
       <Modal
@@ -64,12 +68,24 @@ export const ModalShowMore = ({ isModalOpen, setModalClose, data }) => {
         <div>
           <Title>{name}</Title>
           <CardInfo>
-            <Reviews>
-              {rating} ({reviews.length} Rewiews)
-            </Reviews>
-            <Location>{location}</Location>
+            <Wrapp>
+              <YellowStar
+                style={{
+                  color: "#ffc531",
+                }}
+              />
+              <Reviews>
+                {rating} ({reviews.length} Rewiews)
+              </Reviews>
+            </Wrapp>
+            <Wrapp>
+              <svg width="16" height="16">
+                <use xlinkHref={sprite + "#icon-map-pin"}></use>
+              </svg>
+              <Location>{location}</Location>
+            </Wrapp>
           </CardInfo>
-          <Price>€{price}.00</Price>
+          <Price>€{priceValue}</Price>
           <GalleryList>
             {gallery.map((item) => (
               <GalleryItem key={item}>

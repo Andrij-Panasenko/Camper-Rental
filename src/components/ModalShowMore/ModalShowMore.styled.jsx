@@ -27,6 +27,12 @@ export const Title = styled.h2`
   color: ${(p) => p.theme.colors.black};
 `;
 
+export const Wrapp = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
 export const CardInfo = styled.div`
   display: flex;
   gap: 16px;
@@ -36,8 +42,9 @@ export const CardInfo = styled.div`
 export const Reviews = styled.p`
   font-size: 16px;
   line-height: 1.5;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: ${(p) => p.theme.colors.black};
+  border-bottom: 2px solid ${(p) => p.theme.colors.black};
 `;
 
 export const Location = styled.p`
