@@ -7,6 +7,7 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  padding: 36px 26px;
 `;
 
 export const Logo = styled(NavigationLink)`
@@ -34,6 +35,10 @@ export const NavLink = styled(NavigationLink)`
   line-height: 1.5;
   letter-spacing: -0.01em;
   border-radius: 15px;
+
+  width: 100px;
+  max-width: 138px;
+text-align: center;
 
   background-color: ${(p) => p.theme.colors.red};
   transition: background-color ${(p) => p.theme.transition};
