@@ -12,15 +12,21 @@ export const CatalogList = () => {
   const campersItem = useSelector(selectCampers);
   const isLoading = useSelector(selectIsLoading);
 
-  const [visibleCampers, setVisibleCampers] = useState(4);
+  const [visibleCampres, setVisibleCampres] = useState(4);
+
+  const totalCampersItem = 13;
 
   useEffect(() => {
-    dispatch(getAllCampers(visibleCampers));
-  }, [dispatch, visibleCampers]);
+    dispatch(getAllCampers(visibleCampres));
+  }, [dispatch, visibleCampres]);
 
   const handleLoadMore = () => {
-    setVisibleCampers((prevItems) => prevItems + 4);
+    setVisibleCampres(prevItems => prevItems + 4);
   };
+
+
+  const isTotalCampers = campersItem.length >= totalCampersItem;
+
 
   return (
     <>
@@ -32,8 +38,9 @@ export const CatalogList = () => {
             <CampersItem key={item._id} value={item} />
           ))}
         </ul>
-
-        <LoadMore onClick={handleLoadMore}>Load more</LoadMore>
+        {!isTotalCampers && (
+          <LoadMore onClick={handleLoadMore}>Load more</LoadMore>
+        )}
       </div>
     </>
   );
