@@ -1,4 +1,4 @@
-import{u as W,c as dt,g as te,a as ee,b as Rt,r as Mt,d as ie,j as o}from"./index-xrgBW8Va.js";import{s as ne,a as ae,C as oe,b as Q,P as re}from"./CampersItem-D2Fb-rLj.js";const se=W.button`
+import{u as W,c as dt,g as te,a as ee,b as Rt,r as Mt,d as ie,j as o}from"./index-BayH3RCf.js";import{s as ne,a as ae,C as oe,b as Q,P as re}from"./CampersItem-D2hfgusk.js";const se=W.button`
   display: block;
   padding: 16px 40px;
   background-color: ${v=>v.theme.colors.red};
@@ -148,4 +148,4 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
   display: flex;
   gap: 64px;
   justify-content: center;
-`,we=()=>o.jsx(o.Fragment,{children:o.jsxs(ke,{children:[o.jsx(he,{}),o.jsx(ce,{})]})});function Ce(){return o.jsx("div",{children:o.jsx(we,{})})}export{Ce as default};
+`,we=()=>o.jsx(o.Fragment,{children:o.jsxs(ke,{children:[o.jsx(he,{}),o.jsx(ce,{})]})});function Ce(){return o.jsx("section",{children:o.jsx(we,{})})}export{Ce as default};
