@@ -3,7 +3,6 @@ import {
   VehicleDetailsItem,
   VehicleDetailsContent,
   VehicleDetailsTitle,
-  SvgLine,
   FeaturesItem,
   FeaturesList,
   IcoWrapp,
@@ -123,9 +122,6 @@ export const Features = ({ data }) => {
           ))}
         </FeaturesList>
         <VehicleDetailsTitle>Vehicle details</VehicleDetailsTitle>
-        <SvgLine>
-          <use xlinkHref={sprite + "#icon-Vector"}></use>
-        </SvgLine>
         <VehicleDetailsList>
           {Object.entries(data).map(([key, value]) =>
             vehicleDetailsKeys.includes(key) && (

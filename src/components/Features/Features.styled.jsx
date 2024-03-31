@@ -34,14 +34,26 @@ export const VehicleDetailsTitle = styled.h2`
   line-height: 1.2;
 
   color: ${(p) => p.theme.colors.black};
+
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin-bottom: 24px;
+    margin-top: 24px;
+
+    background-color: rgba(16, 24, 40, 0.1);
+  }
 `;
 
-export const SvgLine = styled.svg`
-  width: 430px;
-  height: 2px;
-  margin-bottom: 24px;
-  margin-top: 24px;
-`;
+// export const SvgLine = styled.svg`
+//   width: 430px;
+//   height: 2px;
+//   margin-bottom: 24px;
+//   margin-top: 24px;
+//   stroke: #101828;
+// `;
 
 export const VehicleDetailsList = styled.ul`
   display: block;
