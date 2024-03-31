@@ -101,6 +101,15 @@ export const Features = ({ data }) => {
     ),
   };
 
+  const vehicleDetailsKeys = [
+    "form",
+    "length",
+    "width",
+    "height",
+    "consumption",
+    "tank",
+  ];
+
   return (
     <>
       <div>
@@ -118,14 +127,13 @@ export const Features = ({ data }) => {
           <use xlinkHref={sprite + "#icon-Vector"}></use>
         </SvgLine>
         <VehicleDetailsList>
-          {Object.entries(details).map(
-            ([key, value]) =>
-              value !== "" && (
-                <VehicleDetailsItem key={key}>
-                  <VehicleDetailsContent>{key}</VehicleDetailsContent>
-                  <VehicleDetailsContent>{value}</VehicleDetailsContent>
-                </VehicleDetailsItem>
-              )
+          {Object.entries(data).map(([key, value]) =>
+            vehicleDetailsKeys.includes(key) && (
+              <VehicleDetailsItem key={key}>
+                <VehicleDetailsContent>{key}</VehicleDetailsContent>
+                <VehicleDetailsContent>{value}</VehicleDetailsContent>
+              </VehicleDetailsItem>
+            )
           )}
         </VehicleDetailsList>
       </div>
