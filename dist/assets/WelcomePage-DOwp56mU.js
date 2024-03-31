@@ -1,4 +1,4 @@
-import{u as n,N as r,j as e}from"./index-xrgBW8Va.js";const t="/camper-rental/assets/Banner-Images-DVxRIAoc.jpg",a=n.div`
+import{u as n,N as r,j as e}from"./index-BayH3RCf.js";const t="/camper-rental/assets/Banner-Images-DVxRIAoc.jpg",a=n.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,4 +33,4 @@ color: #fff7ed;
   :focus {
     background-color: ${o=>o.theme.colors.hoverRed};
   }
-`,s=()=>e.jsxs(a,{children:[e.jsx(i,{children:"Discover Freedom on the Road: Rent Your Perfect Camper Now!"}),e.jsx(c,{to:"/catalog",children:"Find your own VAN"})]}),d=()=>e.jsx(e.Fragment,{children:e.jsx(s,{})});function g(){return e.jsx("div",{children:e.jsx(d,{})})}export{g as default};
+`,s=()=>e.jsxs(a,{children:[e.jsx(i,{children:"Discover Freedom on the Road: Rent Your Perfect Camper Now!"}),e.jsx(c,{to:"/catalog",children:"Find your own VAN"})]}),d=()=>e.jsx(e.Fragment,{children:e.jsx(s,{})});function g(){return e.jsx("section",{children:e.jsx(d,{})})}export{g as default};
