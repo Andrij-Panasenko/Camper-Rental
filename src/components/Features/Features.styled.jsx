@@ -47,14 +47,6 @@ export const VehicleDetailsTitle = styled.h2`
   }
 `;
 
-// export const SvgLine = styled.svg`
-//   width: 430px;
-//   height: 2px;
-//   margin-bottom: 24px;
-//   margin-top: 24px;
-//   stroke: #101828;
-// `;
-
 export const VehicleDetailsList = styled.ul`
   display: block;
   width: 430px;
