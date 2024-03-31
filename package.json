@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "page": "npm run build && git add dist -f && git commit -m \"Version.Parse\" && git subtree push --prefix dist origin gh-pages",
     "preview": "vite preview"
   },
   "dependencies": {
