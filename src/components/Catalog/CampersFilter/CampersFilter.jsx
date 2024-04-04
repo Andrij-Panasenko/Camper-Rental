@@ -20,8 +20,12 @@ import {
 } from "./CampersFilter.styled";
 
 import sprite from "../../../assets/sprite.svg";
+import { useDispatch } from "react-redux";
+import { setFilters } from "../../../redux/catalogSlice";
 
 export const CampersFilter = () => {
+  const dispatch = useDispatch();
+
   const mapPinSVG = (
     <MapPin>
       <use xlinkHref={sprite + "#icon-map-pin"}></use>
@@ -87,10 +91,11 @@ export const CampersFilter = () => {
   );
 
   const handleChecked = (evt) => {
-    console.dir(evt.target.name);
+    // console.dir(evt.target.name);
     const { name, checked } = evt.target;
-    console.log("🚀 ~ handleChecked ~ checked:", checked);
-    console.log("🚀 ~ handleChecked ~ name:", name);
+    // console.log("🚀 ~ handleChecked ~ checked:", checked);
+    // console.log("🚀 ~ handleChecked ~ name:", name);
+    dispatch(setFilters({ name, checked }));
   };
 
   return (
@@ -110,12 +115,13 @@ export const CampersFilter = () => {
           <EquipmentBoxOption>
             <div>
               <HiddenInput
-                id="AC"
+                value=""
+                id="ac"
                 type="checkbox"
-                name="AC"
+                name="vehicleEquipment_ac"
                 onChange={handleChecked}
               />
-              <EquipOption htmlFor="AC">
+              <EquipOption htmlFor="ac">
                 <Contetn>
                   {acSvgIcon}
                   <ContentName>AC</ContentName>
@@ -124,12 +130,13 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                id="Automatic"
+                value=""
+                id="automatic"
                 type="checkbox"
-                name="Automatic"
+                name="vehicleEquipment_automatic"
                 onChange={handleChecked}
               />
-              <EquipOption htmlFor="Automatic">
+              <EquipOption htmlFor="automatic">
                 <Contetn>
                   {transmissionSvgIcon}
                   <ContentName>Automatic</ContentName>
@@ -138,12 +145,13 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                id="Kitchen"
+                value=""
+                id="kitchen"
                 type="checkbox"
-                name="Kitchen"
+                name="vehicleEquipment_kitchen"
                 onChange={handleChecked}
               />
-              <EquipOption htmlFor="Kitchen">
+              <EquipOption htmlFor="kitchen">
                 <Contetn>
                   {kitchenSvgIcon}
                   <ContentName>Kitchen</ContentName>
@@ -151,8 +159,14 @@ export const CampersFilter = () => {
               </EquipOption>
             </div>
             <div>
-              <HiddenInput id="TV" type="checkbox" name="TV" onChange={handleChecked} />
-              <EquipOption htmlFor="TV">
+              <HiddenInput
+                value=""
+                id="tv"
+                type="checkbox"
+                name="vehicleEquipment_tv"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="tv">
                 <Contetn>
                   {tvSvgIcon}
                   <ContentName>TV</ContentName>
@@ -161,12 +175,13 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                id="Shower/WC"
+                value=""
+                id="showerWC"
                 type="checkbox"
-                name="Shower/WC"
+                name="vehicleEquipment_showerWC"
                 onChange={handleChecked}
               />
-              <EquipOption htmlFor="Shower/WC">
+              <EquipOption htmlFor="showerWC">
                 <Contetn>
                   {showerSvgIcon}
                   <ContentName>Shower/WC</ContentName>

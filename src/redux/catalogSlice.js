@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getAllCampers } from "./operations";
 
-const initialFilters = {
-  vehicleEquipment: {
-    ac: false,
-    automatic: false,
-    kitchen: false,
-    tv: false,
-    sjowerWC: false,
-  },
-  vehicleType: {
-    van: false,
-    fullyIntegrated: false,
-    aclove: false,
-  }
-};
+// const initialFilters = {
+//   vehicleEquipment: {
+//     ac: false,
+//     automatic: false,
+//     kitchen: false,
+//     tv: false,
+//     showerWC: false,
+//   },
+//   vehicleType: {
+//     van: false,
+//     fullyIntegrated: false,
+//     aclove: false,
+//   }
+// };
 
 const catalogSlice = createSlice({
   name: "catalog",
@@ -23,7 +23,20 @@ const catalogSlice = createSlice({
     isLoading: false,
     error: null,
     favoriteList: [],
-    filters: initialFilters,
+    filters: {
+      vehicleEquipment: {
+        ac: false,
+        automatic: false,
+        kitchen: false,
+        tv: false,
+        showerWC: false,
+      },
+      vehicleType: {
+        van: false,
+        fullyIntegrated: false,
+        aclove: false,
+      },
+    },
   },
   reducers: {
     addToFavorite(state, action) {
@@ -34,6 +47,13 @@ const catalogSlice = createSlice({
       state.favoriteList = state.favoriteList.filter(
         (item) => item._id !== action.payload._id
       );
+    },
+    setFilters(state, action) {
+      const { name, checked } = action.payload;
+      console.log(action)
+      const [category, filter] = name.split("_");
+     
+      state.filters[category][filter] = checked;
     },
   },
   extraReducers: (builder) => {
@@ -54,4 +74,4 @@ const catalogSlice = createSlice({
 });
 
 export const catalogReducer = catalogSlice.reducer;
-export const { addToFavorite, removeFromFavorite } = catalogSlice.actions;
+export const { addToFavorite, removeFromFavorite, setFilters } = catalogSlice.actions;
