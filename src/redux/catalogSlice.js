@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getAllCampers } from "./operations";
 
-// const initialFilters = {
-//   vehicleEquipment: {
-//     ac: false,
-//     automatic: false,
-//     kitchen: false,
-//     tv: false,
-//     showerWC: false,
-//   },
-//   vehicleType: {
-//     van: false,
-//     fullyIntegrated: false,
-//     aclove: false,
-//   }
-// };
+const initialFilters = {
+  vehicleEquipment: {
+    ac: false,
+    automatic: false,
+    kitchen: false,
+    tv: false,
+    showerWC: false,
+  },
+  vehicleType: {
+    van: false,
+    fullyIntegrated: false,
+    aclove: false,
+  }
+};
 
 const catalogSlice = createSlice({
   name: "catalog",
@@ -23,20 +23,7 @@ const catalogSlice = createSlice({
     isLoading: false,
     error: null,
     favoriteList: [],
-    filters: {
-      vehicleEquipment: {
-        ac: false,
-        automatic: false,
-        kitchen: false,
-        tv: false,
-        showerWC: false,
-      },
-      vehicleType: {
-        van: false,
-        fullyIntegrated: false,
-        aclove: false,
-      },
-    },
+    filters: initialFilters,
   },
   reducers: {
     addToFavorite(state, action) {
@@ -50,9 +37,9 @@ const catalogSlice = createSlice({
     },
     setFilters(state, action) {
       const { name, checked } = action.payload;
-      console.log(action)
+      console.log(action);
       const [category, filter] = name.split("_");
-     
+
       state.filters[category][filter] = checked;
     },
   },
