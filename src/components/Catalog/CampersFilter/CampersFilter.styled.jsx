@@ -61,7 +61,7 @@ export const LineSvg = styled.svg`
   margin-bottom: 24px;
 `;
 
-export const EquipmentList = styled.ul`
+export const EquipmentBoxOption = styled.div`
   width: 360px;
   display: flex;
 
@@ -71,7 +71,7 @@ export const EquipmentList = styled.ul`
   margin-bottom: 32px;
 `;
 
-export const EquipButton = styled.li`
+export const EquipOption = styled.label`
   border-radius: 10px;
   width: 111px;
   height: 95px;
@@ -83,6 +83,20 @@ export const EquipButton = styled.li`
   justify-content: center;
 
   background-color: transparent;
+`;
+
+export const HiddenInput = styled.input`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 `;
 
 export const ContentName = styled.p`

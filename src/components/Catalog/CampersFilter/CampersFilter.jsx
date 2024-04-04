@@ -2,9 +2,10 @@ import { PiWind } from "react-icons/pi";
 import {
   ContentName,
   Contetn,
-  EquipButton,
+  EquipOption,
   Title,
-  EquipmentList,
+  HiddenInput,
+  EquipmentBoxOption,
   Filters,
   Input,
   InputWrapper,
@@ -14,7 +15,6 @@ import {
   VehicleList,
   VehicleType,
   VehicleName,
-  // VehicleTypeSvg,
   SubmitBtn,
   FilterIcon,
 } from "./CampersFilter.styled";
@@ -86,6 +86,14 @@ export const CampersFilter = () => {
     </svg>
   );
 
+  const handleChecked = (evt) => {
+    console.dir(evt.target.name);
+    const { name, checked } = evt.target;
+    console.log("🚀 ~ handleChecked ~ checked:", checked)
+    console.log("🚀 ~ handleChecked ~ name:", name)
+    
+  };
+
   return (
     <>
       <div>
@@ -100,39 +108,50 @@ export const CampersFilter = () => {
         <div>
           <Title>Vehicle equipment</Title>
           {lineSVG}
-          <EquipmentList>
-            <EquipButton>
+          <EquipmentBoxOption>
+            <EquipOption>
+              <HiddenInput id="AC" type="checkbox" name="AC" onChange={handleChecked} />
               <Contetn>
                 {acSvgIcon}
                 <ContentName>AC</ContentName>
               </Contetn>
-            </EquipButton>
-            <EquipButton>
+            </EquipOption>
+            <EquipOption>
+              <HiddenInput
+                type="checkbox"
+                name="Automatic"
+                onChange={handleChecked}
+              />
               <Contetn>
                 {transmissionSvgIcon}
                 <ContentName>Automatic</ContentName>
               </Contetn>
-            </EquipButton>
-            <EquipButton>
+            </EquipOption>
+            <EquipOption>
+              <HiddenInput type="checkbox" name="Kitchen" onChange={handleChecked} />
               <Contetn>
                 {kitchenSvgIcon}
                 <ContentName>Kitchen</ContentName>
               </Contetn>
-            </EquipButton>
-            <EquipButton>
+            </EquipOption>
+            <EquipOption>
+              <HiddenInput type="checkbox" name="TV" onChange={handleChecked} />
               <Contetn>
                 {tvSvgIcon}
                 <ContentName>TV</ContentName>
               </Contetn>
-            </EquipButton>
-            <EquipButton>
+            </EquipOption>
+            <EquipOption>
+              <HiddenInput
+                type="checkbox"
+                name="Shower/ onChange={handleChecked}WC"
+              />
               <Contetn>
                 {showerSvgIcon}
-
                 <ContentName>Shower/WC</ContentName>
               </Contetn>
-            </EquipButton>
-          </EquipmentList>
+            </EquipOption>
+          </EquipmentBoxOption>
         </div>
         <div>
           <Title>Vehicle type</Title>
