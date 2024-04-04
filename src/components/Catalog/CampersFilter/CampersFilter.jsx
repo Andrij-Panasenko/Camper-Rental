@@ -91,11 +91,8 @@ export const CampersFilter = () => {
   );
 
   const handleChecked = (evt) => {
-    // console.dir(evt.target.name);
-    const { name, checked } = evt.target;
-    // console.log("🚀 ~ handleChecked ~ checked:", checked);
-    // console.log("🚀 ~ handleChecked ~ name:", name);
-    dispatch(setFilters({ name, checked }));
+    const { value, checked } = evt.target;
+    dispatch(setFilters({ value, checked }));
   };
 
   return (
@@ -115,10 +112,10 @@ export const CampersFilter = () => {
           <EquipmentBoxOption>
             <div>
               <HiddenInput
-                value=""
+                value="vehicleEquipment_ac"
                 id="ac"
                 type="checkbox"
-                name="vehicleEquipment_ac"
+                name="vehicleEquipment"
                 onChange={handleChecked}
               />
               <EquipOption htmlFor="ac">
@@ -130,10 +127,10 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                value=""
+                value="vehicleEquipment_automatic"
                 id="automatic"
                 type="checkbox"
-                name="vehicleEquipment_automatic"
+                name="vehicleEquipment"
                 onChange={handleChecked}
               />
               <EquipOption htmlFor="automatic">
@@ -145,10 +142,10 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                value=""
+                value="vehicleEquipment_kitchen"
                 id="kitchen"
                 type="checkbox"
-                name="vehicleEquipment_kitchen"
+                name="vehicleEquipment"
                 onChange={handleChecked}
               />
               <EquipOption htmlFor="kitchen">
@@ -160,10 +157,10 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                value=""
+                value="vehicleEquipment_tv"
                 id="tv"
                 type="checkbox"
-                name="vehicleEquipment_tv"
+                name="vehicleEquipment"
                 onChange={handleChecked}
               />
               <EquipOption htmlFor="tv">
@@ -175,10 +172,10 @@ export const CampersFilter = () => {
             </div>
             <div>
               <HiddenInput
-                value=""
+                value="vehicleEquipment_showerWC"
                 id="showerWC"
                 type="checkbox"
-                name="vehicleEquipment_showerWC"
+                name="vehicleEquipment"
                 onChange={handleChecked}
               />
               <EquipOption htmlFor="showerWC">
@@ -194,18 +191,45 @@ export const CampersFilter = () => {
           <Title>Vehicle type</Title>
           {lineSVG}
           <VehicleList>
-            <VehicleType>
-              {vanSVG}
-              <VehicleName>Van</VehicleName>
-            </VehicleType>
-            <VehicleType>
-              {integratedSVG}
-              <VehicleName>Fully Integrated</VehicleName>
-            </VehicleType>
-            <VehicleType>
-              {acloveSVG}
-              <VehicleName>Alcove</VehicleName>
-            </VehicleType>
+            <li>
+              <HiddenInput
+                value="vehicleType_van"
+                id="van"
+                type="radio"
+                name="vehicleType"
+                onChange={handleChecked}
+              />
+              <VehicleType htmlFor="van">
+                {vanSVG}
+                <VehicleName>Van</VehicleName>
+              </VehicleType>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleType_fullyIntegrated"
+                id="fully"
+                type="radio"
+                name="vehicleType"
+                onChange={handleChecked}
+              />
+              <VehicleType htmlFor="fully">
+                {integratedSVG}
+                <VehicleName>Fully Integrated</VehicleName>
+              </VehicleType>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleType_aclove"
+                id="aclove"
+                type="radio"
+                name="vehicleType"
+                onChange={handleChecked}
+              />
+              <VehicleType htmlFor="aclove">
+                {acloveSVG}
+                <VehicleName>Alcove</VehicleName>
+              </VehicleType>
+            </li>
           </VehicleList>
         </div>
         <SubmitBtn type="submit">Search</SubmitBtn>

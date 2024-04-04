@@ -85,24 +85,6 @@ export const EquipOption = styled.label`
   background-color: transparent;
 `;
 
-export const HiddenInput = styled.input`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-
-  &:checked + ${EquipOption} {
-    border-color: ${(p) => p.theme.colors.red};
-  }
-`;
-
 export const ContentName = styled.p`
   font-weight: 500;
   font-size: 16px;
@@ -125,7 +107,8 @@ export const VehicleList = styled.ul`
   margin-bottom: 64px;
 `;
 
-export const VehicleType = styled.li`
+export const VehicleType = styled.label`
+cursor: pointer;
   display: flex;
   gap: 8px;
   flex-basis: calc(100% / 3);
@@ -137,6 +120,25 @@ export const VehicleType = styled.li`
   border-radius: 10px;
   width: 100px;
   height: 95px;
+`;
+
+export const HiddenInput = styled.input`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  &:checked + ${EquipOption},
+  &:checked + ${VehicleType} {
+    border-color: ${(p) => p.theme.colors.red};
+  }
 `;
 
 export const VehicleName = styled.p`
