@@ -97,6 +97,10 @@ export const HiddenInput = styled.input`
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+
+  &:checked + ${EquipOption} {
+    border-color: ${(p) => p.theme.colors.red};
+  }
 `;
 
 export const ContentName = styled.p`

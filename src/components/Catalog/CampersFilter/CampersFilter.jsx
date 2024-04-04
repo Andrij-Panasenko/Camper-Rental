@@ -89,9 +89,8 @@ export const CampersFilter = () => {
   const handleChecked = (evt) => {
     console.dir(evt.target.name);
     const { name, checked } = evt.target;
-    console.log("🚀 ~ handleChecked ~ checked:", checked)
-    console.log("🚀 ~ handleChecked ~ name:", name)
-    
+    console.log("🚀 ~ handleChecked ~ checked:", checked);
+    console.log("🚀 ~ handleChecked ~ name:", name);
   };
 
   return (
@@ -109,48 +108,71 @@ export const CampersFilter = () => {
           <Title>Vehicle equipment</Title>
           {lineSVG}
           <EquipmentBoxOption>
-            <EquipOption>
-              <HiddenInput id="AC" type="checkbox" name="AC" onChange={handleChecked} />
-              <Contetn>
-                {acSvgIcon}
-                <ContentName>AC</ContentName>
-              </Contetn>
-            </EquipOption>
-            <EquipOption>
+            <div>
               <HiddenInput
+                id="AC"
+                type="checkbox"
+                name="AC"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="AC">
+                <Contetn>
+                  {acSvgIcon}
+                  <ContentName>AC</ContentName>
+                </Contetn>
+              </EquipOption>
+            </div>
+            <div>
+              <HiddenInput
+                id="Automatic"
                 type="checkbox"
                 name="Automatic"
                 onChange={handleChecked}
               />
-              <Contetn>
-                {transmissionSvgIcon}
-                <ContentName>Automatic</ContentName>
-              </Contetn>
-            </EquipOption>
-            <EquipOption>
-              <HiddenInput type="checkbox" name="Kitchen" onChange={handleChecked} />
-              <Contetn>
-                {kitchenSvgIcon}
-                <ContentName>Kitchen</ContentName>
-              </Contetn>
-            </EquipOption>
-            <EquipOption>
-              <HiddenInput type="checkbox" name="TV" onChange={handleChecked} />
-              <Contetn>
-                {tvSvgIcon}
-                <ContentName>TV</ContentName>
-              </Contetn>
-            </EquipOption>
-            <EquipOption>
+              <EquipOption htmlFor="Automatic">
+                <Contetn>
+                  {transmissionSvgIcon}
+                  <ContentName>Automatic</ContentName>
+                </Contetn>
+              </EquipOption>
+            </div>
+            <div>
               <HiddenInput
+                id="Kitchen"
                 type="checkbox"
-                name="Shower/ onChange={handleChecked}WC"
+                name="Kitchen"
+                onChange={handleChecked}
               />
-              <Contetn>
-                {showerSvgIcon}
-                <ContentName>Shower/WC</ContentName>
-              </Contetn>
-            </EquipOption>
+              <EquipOption htmlFor="Kitchen">
+                <Contetn>
+                  {kitchenSvgIcon}
+                  <ContentName>Kitchen</ContentName>
+                </Contetn>
+              </EquipOption>
+            </div>
+            <div>
+              <HiddenInput id="TV" type="checkbox" name="TV" onChange={handleChecked} />
+              <EquipOption htmlFor="TV">
+                <Contetn>
+                  {tvSvgIcon}
+                  <ContentName>TV</ContentName>
+                </Contetn>
+              </EquipOption>
+            </div>
+            <div>
+              <HiddenInput
+                id="Shower/WC"
+                type="checkbox"
+                name="Shower/WC"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="Shower/WC">
+                <Contetn>
+                  {showerSvgIcon}
+                  <ContentName>Shower/WC</ContentName>
+                </Contetn>
+              </EquipOption>
+            </div>
           </EquipmentBoxOption>
         </div>
         <div>
