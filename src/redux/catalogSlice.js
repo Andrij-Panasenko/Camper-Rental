@@ -1,6 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getAllCampers } from "./operations";
 
+const initialFilters = {
+  vehicleEquipment: {
+    ac: false,
+    automatic: false,
+    kitchen: false,
+    tv: false,
+    sjowerWC: false,
+  },
+  vehicleType: {
+    van: false,
+    fullyIntegrated: false,
+    aclove: false,
+  }
+};
+
 const catalogSlice = createSlice({
   name: "catalog",
   initialState: {
@@ -8,6 +23,7 @@ const catalogSlice = createSlice({
     isLoading: false,
     error: null,
     favoriteList: [],
+    filters: initialFilters,
   },
   reducers: {
     addToFavorite(state, action) {
