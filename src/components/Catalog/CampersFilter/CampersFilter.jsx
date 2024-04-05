@@ -2,9 +2,10 @@ import { PiWind } from "react-icons/pi";
 import {
   ContentName,
   Contetn,
-  EquipButton,
+  EquipOption,
   Title,
-  EquipmentList,
+  HiddenInput,
+  EquipmentBoxOption,
   Filters,
   Input,
   InputWrapper,
@@ -14,14 +15,17 @@ import {
   VehicleList,
   VehicleType,
   VehicleName,
-  // VehicleTypeSvg,
   SubmitBtn,
   FilterIcon,
 } from "./CampersFilter.styled";
 
 import sprite from "../../../assets/sprite.svg";
+import { useDispatch } from "react-redux";
+import { setFilters } from "../../../redux/catalogSlice";
 
 export const CampersFilter = () => {
+  const dispatch = useDispatch();
+
   const mapPinSVG = (
     <MapPin>
       <use xlinkHref={sprite + "#icon-map-pin"}></use>
@@ -86,6 +90,11 @@ export const CampersFilter = () => {
     </svg>
   );
 
+  const handleChecked = (evt) => {
+    const { value, checked } = evt.target;
+    dispatch(setFilters({ value, checked }));
+  };
+
   return (
     <>
       <div>
@@ -100,56 +109,127 @@ export const CampersFilter = () => {
         <div>
           <Title>Vehicle equipment</Title>
           {lineSVG}
-          <EquipmentList>
-            <EquipButton>
-              <Contetn>
-                {acSvgIcon}
-                <ContentName>AC</ContentName>
-              </Contetn>
-            </EquipButton>
-            <EquipButton>
-              <Contetn>
-                {transmissionSvgIcon}
-                <ContentName>Automatic</ContentName>
-              </Contetn>
-            </EquipButton>
-            <EquipButton>
-              <Contetn>
-                {kitchenSvgIcon}
-                <ContentName>Kitchen</ContentName>
-              </Contetn>
-            </EquipButton>
-            <EquipButton>
-              <Contetn>
-                {tvSvgIcon}
-                <ContentName>TV</ContentName>
-              </Contetn>
-            </EquipButton>
-            <EquipButton>
-              <Contetn>
-                {showerSvgIcon}
-
-                <ContentName>Shower/WC</ContentName>
-              </Contetn>
-            </EquipButton>
-          </EquipmentList>
+          <EquipmentBoxOption>
+            <li>
+              <HiddenInput
+                value="vehicleEquipment_ac"
+                id="ac"
+                type="checkbox"
+                name="vehicleEquipment"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="ac">
+                <Contetn>
+                  {acSvgIcon}
+                  <ContentName>AC</ContentName>
+                </Contetn>
+              </EquipOption>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleEquipment_automatic"
+                id="automatic"
+                type="checkbox"
+                name="vehicleEquipment"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="automatic">
+                <Contetn>
+                  {transmissionSvgIcon}
+                  <ContentName>Automatic</ContentName>
+                </Contetn>
+              </EquipOption>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleEquipment_kitchen"
+                id="kitchen"
+                type="checkbox"
+                name="vehicleEquipment"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="kitchen">
+                <Contetn>
+                  {kitchenSvgIcon}
+                  <ContentName>Kitchen</ContentName>
+                </Contetn>
+              </EquipOption>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleEquipment_tv"
+                id="tv"
+                type="checkbox"
+                name="vehicleEquipment"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="tv">
+                <Contetn>
+                  {tvSvgIcon}
+                  <ContentName>TV</ContentName>
+                </Contetn>
+              </EquipOption>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleEquipment_showerWC"
+                id="showerWC"
+                type="checkbox"
+                name="vehicleEquipment"
+                onChange={handleChecked}
+              />
+              <EquipOption htmlFor="showerWC">
+                <Contetn>
+                  {showerSvgIcon}
+                  <ContentName>Shower/WC</ContentName>
+                </Contetn>
+              </EquipOption>
+            </li>
+          </EquipmentBoxOption>
         </div>
         <div>
           <Title>Vehicle type</Title>
           {lineSVG}
           <VehicleList>
-            <VehicleType>
-              {vanSVG}
-              <VehicleName>Van</VehicleName>
-            </VehicleType>
-            <VehicleType>
-              {integratedSVG}
-              <VehicleName>Fully Integrated</VehicleName>
-            </VehicleType>
-            <VehicleType>
-              {acloveSVG}
-              <VehicleName>Alcove</VehicleName>
-            </VehicleType>
+            <li>
+              <HiddenInput
+                value="vehicleType_van"
+                id="van"
+                type="radio"
+                name="vehicleType"
+                onChange={handleChecked}
+              />
+              <VehicleType htmlFor="van">
+                {vanSVG}
+                <VehicleName>Van</VehicleName>
+              </VehicleType>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleType_fullyIntegrated"
+                id="fully"
+                type="radio"
+                name="vehicleType"
+                onChange={handleChecked}
+              />
+              <VehicleType htmlFor="fully">
+                {integratedSVG}
+                <VehicleName>Fully Integrated</VehicleName>
+              </VehicleType>
+            </li>
+            <li>
+              <HiddenInput
+                value="vehicleType_aclove"
+                id="aclove"
+                type="radio"
+                name="vehicleType"
+                onChange={handleChecked}
+              />
+              <VehicleType htmlFor="aclove">
+                {acloveSVG}
+                <VehicleName>Alcove</VehicleName>
+              </VehicleType>
+            </li>
           </VehicleList>
         </div>
         <SubmitBtn type="submit">Search</SubmitBtn>

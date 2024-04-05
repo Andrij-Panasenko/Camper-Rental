@@ -1,4 +1,4 @@
-import{u as b,r as y,e as ji,f as $i,g as kt,R as Pe,j as l,a as Fi,b as Ci,h as Ai,i as ki}from"./index-BayH3RCf.js";const Mp=e=>e.catalog.items,Mi=e=>e.catalog.favoriteList,Pp=e=>e.catalog.isLoading,Pi=b.div`
+import{u as b,r as y,e as ji,f as $i,g as kt,R as Pe,j as l,a as Fi,b as Ci,h as Ai,i as ki}from"./index-BkRRlM_D.js";const Mp=e=>e.catalog.items,Mi=e=>e.catalog.favoriteList,Pp=e=>e.catalog.isLoading,Pi=b.div`
   cursor: pointer;
   width: 24px;
   height: 24px;

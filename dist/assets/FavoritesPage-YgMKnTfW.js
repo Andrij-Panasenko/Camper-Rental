@@ -1,4 +1,4 @@
-import{u as r,b as o,j as e}from"./index-BayH3RCf.js";import{c as i,C as n}from"./CampersItem-D2hfgusk.js";const a=r.div`
+import{u as r,b as o,j as e}from"./index-BkRRlM_D.js";import{c as i,C as n}from"./CampersItem-uLXcD9Zq.js";const a=r.div`
   display: flex;
   justify-content: center;
 `,c=r.p`
