@@ -110,7 +110,7 @@ export const CampersFilter = () => {
           <Title>Vehicle equipment</Title>
           {lineSVG}
           <EquipmentBoxOption>
-            <div>
+            <li>
               <HiddenInput
                 value="vehicleEquipment_ac"
                 id="ac"
@@ -124,8 +124,8 @@ export const CampersFilter = () => {
                   <ContentName>AC</ContentName>
                 </Contetn>
               </EquipOption>
-            </div>
-            <div>
+            </li>
+            <li>
               <HiddenInput
                 value="vehicleEquipment_automatic"
                 id="automatic"
@@ -139,8 +139,8 @@ export const CampersFilter = () => {
                   <ContentName>Automatic</ContentName>
                 </Contetn>
               </EquipOption>
-            </div>
-            <div>
+            </li>
+            <li>
               <HiddenInput
                 value="vehicleEquipment_kitchen"
                 id="kitchen"
@@ -154,8 +154,8 @@ export const CampersFilter = () => {
                   <ContentName>Kitchen</ContentName>
                 </Contetn>
               </EquipOption>
-            </div>
-            <div>
+            </li>
+            <li>
               <HiddenInput
                 value="vehicleEquipment_tv"
                 id="tv"
@@ -169,8 +169,8 @@ export const CampersFilter = () => {
                   <ContentName>TV</ContentName>
                 </Contetn>
               </EquipOption>
-            </div>
-            <div>
+            </li>
+            <li>
               <HiddenInput
                 value="vehicleEquipment_showerWC"
                 id="showerWC"
@@ -184,7 +184,7 @@ export const CampersFilter = () => {
                   <ContentName>Shower/WC</ContentName>
                 </Contetn>
               </EquipOption>
-            </div>
+            </li>
           </EquipmentBoxOption>
         </div>
         <div>

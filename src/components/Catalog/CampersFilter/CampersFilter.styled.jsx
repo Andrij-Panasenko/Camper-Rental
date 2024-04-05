@@ -61,7 +61,7 @@ export const LineSvg = styled.svg`
   margin-bottom: 24px;
 `;
 
-export const EquipmentBoxOption = styled.div`
+export const EquipmentBoxOption = styled.ul`
   width: 360px;
   display: flex;
 
