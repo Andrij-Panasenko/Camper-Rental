@@ -1,4 +1,4 @@
-import{u as A,c as yt,g as ie,a as Xt,b as Rt,r as Mt,d as ne,j as a,s as ae}from"./index-CQmN5GHo.js";import{s as oe,a as re,C as se,b as $,P as le}from"./CampersItem-k4RJ4d5X.js";const ce=A.button`
+import{u as A,c as yt,g as ie,a as Xt,b as Rt,r as Mt,d as ne,j as a,s as ae}from"./index-C4Zercgt.js";import{s as oe,a as re,C as se,b as $,P as le}from"./CampersItem-CiNJnKvz.js";const ce=A.button`
   display: block;
   padding: 16px 40px;
   background-color: ${v=>v.theme.colors.red};
