@@ -6,7 +6,6 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
   padding: 36px 26px;
 `;
 
@@ -18,7 +17,6 @@ export const Logo = styled(NavigationLink)`
   color: ${(p) => p.theme.colors.black};
 `;
 
-
 export const NavWrapp = styled.div`
   display: flex;
   align-items: center;
@@ -27,6 +25,9 @@ export const NavWrapp = styled.div`
 
 export const NavLink = styled(NavigationLink)`
   display: block;
+  width: 100%;
+  max-width: 168px;
+  align-content: center;
   padding: 10px 34px;
   color: #ffffff;
   text-decoration: none;
@@ -36,9 +37,9 @@ export const NavLink = styled(NavigationLink)`
   letter-spacing: -0.01em;
   border-radius: 15px;
 
-  width: 100px;
-  max-width: 138px;
-text-align: center;
+  /* width: 100px;
+  max-width: 138px; */
+  text-align: center;
 
   background-color: ${(p) => p.theme.colors.red};
   transition: background-color ${(p) => p.theme.transition};
